@@ -1,6 +1,7 @@
 require 'api_constraints'
 
 Rails.application.routes.draw do
+
   devise_for :clients
   # Api definition
   namespace :api, defaults: { format: :json } do
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
       # We are going to list our resources here
       resources :clients, :only => [:show, :create, :update, :destroy]
       resources :sessions, :only => [:create, :destroy]
+      resources :hotels, :only => [:show, :index]
     end
   end
 end

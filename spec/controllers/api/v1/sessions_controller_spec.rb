@@ -42,6 +42,7 @@ describe Api::V1::SessionsController do
 
     before(:each) do
       @client = FactoryGirl.create :client
+      api_authorization_header @client.auth_token
       sign_in @client
       delete :destroy, id: @client.auth_token
     end
