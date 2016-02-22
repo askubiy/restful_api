@@ -93,15 +93,4 @@ describe Api::V1::ClientsController do
     end
   end
 
-  describe "DELETE #destroy" do
-    before(:each) do
-      @client = FactoryGirl.create :client
-      api_authorization_header @client.auth_token
-      delete :destroy, { id: @client.auth_token }
-    end
-
-    it { should respond_with 204 }
-
-  end
-
 end

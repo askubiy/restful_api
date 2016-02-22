@@ -20,9 +20,15 @@ module Request
       request.headers['Authorization'] = token
     end
 
+    def default_api_authorization_header
+      @client = FactoryGirl.create :client
+      request.headers['Authorization'] = @client.auth_token
+    end
+
     def include_default_accept_headers
       api_header
       api_response_format
+      default_api_authorization_header
     end
   end
 end

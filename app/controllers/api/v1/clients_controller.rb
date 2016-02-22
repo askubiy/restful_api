@@ -1,5 +1,4 @@
 class Api::V1::ClientsController < ApplicationController
-  #before_action :authenticate_with_token!, only: [:update, :destroy]
   respond_to :json
 
   def show
@@ -23,11 +22,6 @@ class Api::V1::ClientsController < ApplicationController
     else
       render json: { errors: client.errors }, status: 422
     end
-  end
-
-  def destroy
-    current_client.destroy
-    head 204
   end
 
   private

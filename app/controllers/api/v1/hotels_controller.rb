@@ -1,4 +1,4 @@
-class  Api::V1::HotelsController < ApplicationController
+class Api::V1::HotelsController < ApplicationController
   respond_to :json
 
   def index
